@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Hello Plugin!</title>
+		<script src="js/require-2.1.9.min.js"></script>
+		<script src="js/require-config.js"></script>
+	</head>
+	<body>
+		<div id="test-element"></div>
+		<script>
+		require(['jquery', 'jquery-hello-plugin'], function($) {
+			$(document).ready(function() {
+				// initialize plugin
+				var helloPlugin = $("#test-element").hello({
+					name: 'Plugin',
+				});
+			
+				// Wait 3 seconds and change the name ...
+				setTimeout( function(){
+					helloPlugin.sayHello('{Your Name}');
+				}, 3000);
+			});
+		});
+		</script>
+	</body>
+</html>
